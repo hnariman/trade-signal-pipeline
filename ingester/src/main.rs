@@ -114,9 +114,10 @@ async fn producer_task(
 ) {
     let timeout = rdkafka::util::Timeout::After(std::time::Duration::from_secs(3));
     while let Some(text) = rx.recv().await {
+        let key = chrono::Utc::now().timestamp_millis().to_le_bytes();
         let record = rdkafka::producer::FutureRecord::to(KAFKA_TOPIC)
             .payload(text.as_str())
-            .key("btcusdt");
+            .key(&key);
 
         match producer.send(record, timeout).await {
             Ok(v) => tracing::debug!(partition = v.partition, offset = v.offset, "message sent"),

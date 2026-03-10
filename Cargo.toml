@@ -1,7 +1,17 @@
 
 [workspace]
-members =["ingester"]
+members =["ingester", "normalizer"]
 resolver = "2"
 
 [workspace.dependencies]
-tokio={workspace=true}
+tokio = { version = "1", features = ["full"] }
+rdkafka = { version = "0.39", features = ["cmake-build"] }
+anyhow = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+futures-util = "0.3"
+serde = { version = "1", features = ["derive"] }
+sonic-rs = "0.5.7"
+rust_decimal = { version = "1", features = ["serde"] }
+tokio-tungstenite = { version = "0.28", features = ["native-tls"] }
+chrono = {version="0.4.44"}

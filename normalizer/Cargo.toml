@@ -1,0 +1,15 @@
+[package]
+name = "normalizer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { workspace = true }
+rdkafka = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+futures-util = { workspace = true }
+serde = { workspace = true }
+sonic-rs = { workspace = true }
+rust_decimal = { workspace = true }
