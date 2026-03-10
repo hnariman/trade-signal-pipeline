@@ -1,0 +1,7 @@
+
+[workspace]
+members =["ingester"]
+resolver = "2"
+
+[workspace.dependencies]
+tokio={workspace=true}
