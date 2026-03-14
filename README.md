@@ -94,6 +94,9 @@ Signals are published to `signals.btc` and logged to stdout:
 ## Disclaimer
 
 This project is for educational and demonstration purposes only.
+
 SMA crossover alone is not a sufficient basis for trading decisions.
+
 Nothing in this repository constitutes financial advice.
+
 Use at your own risk. 
