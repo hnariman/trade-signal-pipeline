@@ -3,6 +3,8 @@
 Real-time market data pipeline using Rust. 
 Streams ticks from Binance websockets and generates SMA crossover signals.
 
+![Pipeline demo](assets/demo.gif)
+
 ## How it works
 
 Ingestor - reads realtime ticks from Binance websockets -> raw-traces.btc (btc symbol, separate ingestor for each asset/pair for scalability)
