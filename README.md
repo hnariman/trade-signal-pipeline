@@ -4,8 +4,11 @@ Real-time market data pipeline using Rust.
 Streams ticks from Binance websockets and generates SMA crossover signals.
 
 ## How it works
+
 Ingestor - reads realtime ticks from Binance websockets -> raw-traces.btc (btc symbol, separate ingestor for each asset/pair for scalability)
+
 Normizer - reads from raw-trades shapes the OLHCV and pushes to normalized-trades.btc
+
 SMA-Cross - reads normalized-trades.btc calculates SMA and spots crossover signal pushing it to signals.btc
 
 ## Stack
@@ -50,11 +53,17 @@ Kafka UI shall be available at http://localhost:8080
 All settings via environment variables, with sane defaults for local development:
 
 KAFKA_BROKERS (default=localhost:9092) - Kafka broker address
+
 FAST_PERIOD (default=5) - Fast SMA period in ticks
+
 SLOW_PERIOD (default=20) - Slow SMA period in ticks
+
 KAFKA_TOPIC_NORMALIZED (default=normalized-trades.btc) - Input topic
+
 KAFKA_TOPIC_SIGNALS (default=signals.btc) - Output topic
+
 CONSUMER_GROUP (default=sma-cross-v1) - Kafka consumer group
+
 KAFKA_BROKERS (default=localhost:9092) - Kafka broker address 
 
 Override for a more active signal on demo:
