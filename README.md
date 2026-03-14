@@ -7,7 +7,7 @@ Streams ticks from Binance websockets and generates SMA crossover signals.
 
 Ingestor - reads realtime ticks from Binance websockets -> raw-traces.btc (btc symbol, separate ingestor for each asset/pair for scalability)
 
-Normizer - reads from raw-trades shapes the OLHCV and pushes to normalized-trades.btc
+Normizer - reads from raw-trades parses with sonic-rs shapes the tick and pushes to normalized-trades.btc
 
 SMA-Cross - reads normalized-trades.btc calculates SMA and spots crossover signal pushing it to signals.btc
 
@@ -73,7 +73,12 @@ FAST_PERIOD=3 SLOW_PERIOD=7 cargo run -p sma-cross
 
 ## Signal output
 
-When SMA(fast) crosses above SMA(slow) — bullish signal. Below — bearish.
+When SMA(fast) crosses:
+
+Above SMA(slow) — bullish signal. 
+
+Below — bearish.
+
 Signals are published to `signals.btc` and logged to stdout:
 ```json
 {
@@ -86,3 +91,9 @@ Signals are published to `signals.btc` and logged to stdout:
 }
 ```
 
+## Disclaimer
+
+This project is for educational and demonstration purposes only.
+SMA crossover alone is not a sufficient basis for trading decisions.
+Nothing in this repository constitutes financial advice.
+Use at your own risk. 
