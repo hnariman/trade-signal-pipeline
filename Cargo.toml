@@ -1,6 +1,5 @@
-
 [workspace]
-members =["ingester", "normalizer"]
+members = ["ingester", "normalizer", "sma-cross"]
 resolver = "2"
 
 [workspace.dependencies]
@@ -13,5 +12,6 @@ futures-util = "0.3"
 serde = { version = "1", features = ["derive"] }
 sonic-rs = "0.5.7"
 rust_decimal = { version = "1", features = ["serde"] }
+rust_decimal_macros = "1"
 tokio-tungstenite = { version = "0.28", features = ["native-tls"] }
-chrono = {version="0.4.44"}
+chrono = { version = "0.4.44" }

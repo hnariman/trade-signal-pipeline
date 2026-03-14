@@ -1119,6 +1119,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust_decimal_macros"
+version = "1.40.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "74a5a6f027e892c7a035c6fddb50435a1fbf5a734ffc0c2a9fed4d0221440519"
+dependencies = [
+ "quote",
+ "syn 2.0.117",
+]
+
+[[package]]
 name = "rustix"
 version = "1.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1277,6 +1287,22 @@ name = "slab"
 version = "0.4.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0c790de23124f9ab44544d7ac05d60440adc586479ce501c1d6d7da3cd8c9cf5"
+
+[[package]]
+name = "sma-cross"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "futures-util",
+ "rdkafka",
+ "rust_decimal",
+ "rust_decimal_macros",
+ "serde",
+ "sonic-rs",
+ "tokio",
+ "tracing",
+ "tracing-subscriber",
+]
 
 [[package]]
 name = "smallvec"
