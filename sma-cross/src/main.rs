@@ -26,7 +26,7 @@ struct SignalEvent {
 async fn main() -> anyhow::Result<()> {
     let config = config::Config::from_env();
     tracing_subscriber::fmt()
-        .with_env_filter(std::env::var("RUST_LOG").unwrap_or_else(|_| "analyzer=info".into()))
+        .with_env_filter(std::env::var("RUST_LOG").unwrap_or_else(|_| "sma_cross=info".into()))
         .json()
         .init();
 
